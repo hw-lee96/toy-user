@@ -1,0 +1,23 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/toy?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: asdf112!
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernte:
+        # show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+#    trace 하면 SQL 실행 시 바인딩 된 데이터가 로그에 출력됨
+    org.hibernate.type: trace
