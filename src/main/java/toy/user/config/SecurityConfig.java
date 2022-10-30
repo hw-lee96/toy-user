@@ -34,7 +34,8 @@ public class SecurityConfig {
  
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
+        // 시큐리티를 적용하지 않을 예외 설정
+        return (web) -> web.ignoring().antMatchers("/favicon.ico", "/error");
     }
  
 }
