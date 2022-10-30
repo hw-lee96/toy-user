@@ -3,7 +3,7 @@ package toy.user.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import toy.user.model.Member;
+import toy.user.entity.User;
 import toy.user.repository.MemberRepository;
 
 @Service
@@ -13,16 +13,16 @@ public class AuthServiceImpl implements AuthService {
     private MemberRepository memberRepository;
 
     @Override
-    public void signUpUser(Member member) {
+    public void signUpUser(User user) {
         // String password = member.getPassword();
         // String salt = saltUtil.getSalt();
         // member.setSalt(new Salt(salt));
         // member.setPassword(saltUtil.encodePassword(salt, password));
-        memberRepository.save(member);
+        memberRepository.save(user);
     }
 
     @Override
-    public Member loginUser(String id, String password) {
+    public User loginUser(String id, String password) {
         // TODO Auto-generated method stub
         return null;
     }

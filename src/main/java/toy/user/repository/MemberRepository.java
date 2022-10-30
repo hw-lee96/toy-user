@@ -1,9 +1,8 @@
 package toy.user.repository;
 
 import org.springframework.data.repository.CrudRepository;
+import toy.user.entity.User;
 
-import toy.user.model.Member;
-
-public interface MemberRepository extends CrudRepository<Member, Long>{
-    Member findByUsername(String username);
+public interface MemberRepository extends CrudRepository<User, Long>{
+    User findByUsername(String username);
 }

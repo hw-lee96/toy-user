@@ -3,7 +3,7 @@ package toy.user.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import toy.user.model.Member;
+import toy.user.entity.User;
 import toy.user.model.Response;
 import toy.user.service.AuthService;
 
@@ -35,13 +35,13 @@ public class MemberRestController {
     
 
     @PostMapping("/signup")
-    public Response signUpUser(@RequestBody Member member){
+    public Response signUpUser(@RequestBody User user){
         Response response = new Response();
 
-        System.out.println("member : " + member.toString());
+        System.out.println("user : " + user.toString());
 
         try{
-            authService.signUpUser(member);
+            authService.signUpUser(user);
             response.setResponse("success");
             response.setMessage("회원가입을 성공적으로 완료했습니다.");
         }
