@@ -35,18 +35,18 @@ public class User {
     private String nickname;
     
     @NotBlank
-    @Column(name = "status")
-    private String status;
+    @Column(name = "activated")
+    private boolean activated;
     
-    @CreationTimestamp
-    @Column(name = "created_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-    
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+   @CreationTimestamp
+   @Column(name = "created_at")
+   @Temporal(TemporalType.TIMESTAMP)
+   private Date createdAt;
+
+   @UpdateTimestamp
+   @Column(name = "updated_at")
+   @Temporal(TemporalType.TIMESTAMP)
+   private Date updatedAt;
 
    @ManyToMany
    @JoinTable(
