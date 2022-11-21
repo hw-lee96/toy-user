@@ -9,8 +9,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-//import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.filter.CorsFilter;
 import toy.user.jwt.JwtAccessDeniedHandler;
 import toy.user.jwt.JwtAuthenticationEntryPoint;
 import toy.user.jwt.JwtSecurityConfig;
@@ -20,18 +19,18 @@ import toy.user.jwt.TokenProvider;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
     private final TokenProvider tokenProvider;
-//    private final CorsFilter corsFilter;
+    private final CorsFilter corsFilter;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
     public SecurityConfig(
             TokenProvider tokenProvider,
-//            CorsFilter corsFilter,
+            CorsFilter corsFilter,
             JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
             JwtAccessDeniedHandler jwtAccessDeniedHandler
     ) {
         this.tokenProvider = tokenProvider;
-//        this.corsFilter = corsFilter;
+        this.corsFilter = corsFilter;
         this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
         this.jwtAccessDeniedHandler = jwtAccessDeniedHandler;
     }

@@ -4,6 +4,7 @@ import lombok.*;
 import java.util.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Set;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -17,26 +18,26 @@ import org.hibernate.annotations.UpdateTimestamp;
 @NoArgsConstructor
 public class User {
 
-    @Id
-    @Column(name = "user_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+   @Id
+   @Column(name = "user_id")
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long userId;
 
     @NotBlank
     @Column(name = "username", length = 50, unique = true)
-    private String username;
-    
+   private String username;
+
     @NotBlank
     @Column(name = "password", length = 100)
-    private String password;
-    
+   private String password;
+
     @NotBlank
-    @Column(name = "nickname", length = 50)
-    private String nickname;
-    
-    @Column(name = "activated")
-    private boolean activated;
-    
+    @Column(name = "nicvkname", length = 50)
+   private String nickname;
+
+   @Column(name = "activated")
+   private boolean activated;
+
    @CreationTimestamp
    @Column(name = "created_at")
    @Temporal(TemporalType.TIMESTAMP)
